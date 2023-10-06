@@ -21,7 +21,7 @@ class ConvNet(torch.nn.Module):
         def forward(self, x):
             identity = x
             if self.downsample is not None:
-                identity = self.downsample(x)
+                identity = self.downsample(identity)
             return self.net(x)+identity
 
     def __init__(self, layers=[32, 64, 128], n_input_channels=3):
